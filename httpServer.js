@@ -6,6 +6,8 @@ http.createServer(function (request, response) {
 	// HTTP 状态值: 200 : OK
 	// 内容类型: text/plain
 	response.writeHead(200, {'Content-Type': 'text/plain'});
+	//url
+	console.log(request.url);
 	// 发送响应数据
 	var haha = new version();
 	haha.versionCode = 100;

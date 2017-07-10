@@ -18,5 +18,6 @@ http.createServer(function (request, response) {
 	response.end(JSON.stringify(haha));
 }).listen(8808);
 
+
 // 终端打印如下信息
 console.log('Server running at http://127.0.0.1:8808/');

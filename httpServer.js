@@ -1,4 +1,5 @@
 var http = require('http');
+//引用其他model
 var version = require('./model/version.js');
 http.createServer(function (request, response) {
 
@@ -10,9 +11,10 @@ http.createServer(function (request, response) {
 	console.log(request.url);
 	// 发送响应数据
 	var haha = new version();
-	haha.versionCode = 100;
-	haha.versionName = "哈哈";
-	haha.updateInfo = "这次更新";
+
+	haha.setVersionName("1.0.2");
+	haha.setVersionCode(10);
+	haha.setUpdateInfo("这是一次测试的版本升级");
 	response.end(JSON.stringify(haha));
 }).listen(8808);
 

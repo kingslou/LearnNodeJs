@@ -1,6 +1,9 @@
 var http = require('http');
 //引用其他model
 var version = require('./model/version.js');
+var url = require('url');
+var util = require('util');
+var querystring = require('querystring');
 http.createServer(function (request, response) {
 
 	// 发送 HTTP 头部
@@ -9,6 +12,15 @@ http.createServer(function (request, response) {
 	response.writeHead(200, {'Content-Type': 'text/plain'});
 	//url
 	console.log(request.url);
+	//获取请求参数,get
+	//例如 http://127.0.0.1:8808/user?name=%22Android%22&url=%22httpurl%22
+	var params = url.parse(request.url, true).query;
+	console.log(params.name); // Android
+	console.log(params.url); // httpurl
+
+	//获取请求参数 post
+
+
 	// 发送响应数据
 	var haha = new version();
 

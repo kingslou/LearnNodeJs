@@ -9,16 +9,17 @@
 
       function addEvent(event){
           console.log("add"+event);
+          alert("收到消息");
       }
 
       function click1(){
           alert("add listener");
           eventBus.listener.add(eventKey,addEvent);
-          // window.location.href='html/event1.html';
       }
       function click2(){
         alert("send msg");
         pubshMsg(eventKey,"hahaha");
+        window.location.href='html/event1.html';
       }
       function click3(){
         alert("remove listener");

@@ -1,14 +1,21 @@
 <html>
   <head>
-    <script src="tools/eventBus.js"></script>
+    <script src="../tools/eventBus.js"></script>
     <script>
-        var text = document.getElementById('id');
-        text.innerText ="cesh"
+        window.onload = function() {
+          var testmsg = "空";
+          alert(eventKey);
+          eventBus.on("didi",function(msg){
+              console.log("收到"+msg);
+              testmsg = msg;
+          })
+          var text = document.getElementById('myHeader');
+          alert(testmsg);
+        }
+
     </script>
   </head>
   <body>
-
-      <p id="id"> 接收到的消息 </p>
-
+      <p id="myHeader"> 接收到的消息 </p>
   </body>
 </html>
